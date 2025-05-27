@@ -13,7 +13,7 @@ class User(Base):
     email = Column(String, unique=True, nullable=False)
     phone = Column(String)
     
-    orders = relationship("Orders", back_populates="user")
+    orders = relationship("Order", back_populates="user")
     
     def __repr__(self):
         return f"<User(id={self.id}, name='{self.name}', email='{self.email}')>"
@@ -35,7 +35,7 @@ class Order(Base):
     delivery_location = Column(String, nullable=False)
     
     user = relationship("User", back_populates="orders")
-    order_items = relationship("Order_Items", back_populates="order")
+    order_items = relationship("OrderItems", back_populates="order")
     
     def __repr__(self):
         return f"<Order(id={self.id}, date={self.date}, total={self.total}, user_id={self.user_id}, status='{self.status}')>"
@@ -56,7 +56,7 @@ class Item(Base):
     description = Column(String)
     volume_ml = Column(Integer)
     
-    order_items = relationship("Order_Items", back_populates="item")
+    order_items = relationship("OrderItems", back_populates="item")
     
     def __repr__(self):
         return f"<Item(id={self.id}, name='{self.name}', price={self.price}, available={self.availabilty})>"
