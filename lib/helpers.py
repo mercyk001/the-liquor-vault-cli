@@ -235,7 +235,7 @@ def place_order():
     session.commit()
     
     for item in cart:
-        order_item = OrderItem(
+        order_item = OrderItems(
             item_id=item['item_id'],
             order_id=order.id,
             quantity=item['quantity']

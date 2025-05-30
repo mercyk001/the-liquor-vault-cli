@@ -88,6 +88,7 @@ class OrderItems(Base):
     
     
 
-engine = create_engine('sqlite:///liquor_vault.db')
-Base.metadata.create_all(engine)
-Session = sessionmaker(bind=engine)
+#engine = create_engine('sqlite:///liquor_vault.db')
+#Base.metadata.create_all(engine)
+#Session = sessionmaker()
+
