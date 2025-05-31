@@ -12,7 +12,11 @@ A command-line interface (CLI) application for browsing, selecting, and ordering
 - Debug mode for developers
 
 ## Project Structure
-
+- `lib/` — Main application logic and CLI modules
+- `migrations/` — Database migrations (likely Alembic)
+- `liquor_vault.db` — SQLite database (local app data)
+- `alembic.ini` — Alembic configuration for migrations
+- `Pipfile` / `Pipfile.lock` — Python dependencies
 
 
 ### Prerequisites
