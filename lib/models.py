@@ -52,7 +52,8 @@ class Item(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String, nullable=False)
     price = Column(Float, nullable=False)
-    availabilty = Column(Boolean, default=True)
+    availability = Column(Boolean, default=True)
+    quantity = Column(Integer, default=0)
     description = Column(String)
     volume_ml = Column(Integer)
     

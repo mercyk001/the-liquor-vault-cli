@@ -81,8 +81,8 @@ def browse_collection():
     print("=" * 50)
     
     for item in items:
-        availabilty = "Available" if item.availabilty > 0 else "Out of Stock"
-        print(f"{item.id:<5} {item.name:<30} ${item.price:<10} {availabilty}")
+        availability = "Available" if item.availability > 0 else "Out of Stock"
+        print(f"{item.id:<5} {item.name:<30} Ksh{item.price:<10} {availability}")
     print("=" * 50)
     
     if current_user:
@@ -104,7 +104,7 @@ def add_to_cart(session):
         if not item:
             print("Item not found. Please try again.")
             return
-        if item.availabilty:
+        if not item.availability:
             print("Item out of stock!")
             return
         

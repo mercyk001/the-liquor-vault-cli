@@ -3,12 +3,11 @@ from datetime import datetime
 import random
 
 def seed_database():
-    # Create session instance
+   
     session = Session()
     
     try:
-        # Clear existing data in the correct order (respecting foreign key constraints)
-        # Delete child records first, then parent records
+       
         session.query(OrderItems).delete(synchronize_session=False)
         session.query(Order).delete(synchronize_session=False)
         session.query(Item).delete(synchronize_session=False)
@@ -52,35 +51,40 @@ def seed_database():
             {
               "name": "Jack Daniels",
               "price": 1500.0,
-              "availabilty": True,
+              "availability": True,
+              "quantity": 100,
               "description": "Tennessee Whiskey",
               "volume_ml": 700  
             },
             {
                 "name": "Johnnie Walker Black Label",
                 "price": 2000.0,
-                "availabilty": True,
+                "availability": True,
+                "quantity": 50,
                 "description": "Blended Scotch Whisky",
                 "volume_ml": 750  
             },
             {
                 "name": "Jameson Irish Whiskey",
                 "price": 1800.0,
-                "availabilty": True,
+                "availability": True,
+                "quantity": 75,
                 "description": "Irish Whiskey",
                 "volume_ml": 750  
             },
             {
                 "name": "Chivas Regal 12 Year Old",
                 "price": 2200.0,
-                "availabilty": True,
+                "availability": True,
+                "quantity": 60,
                 "description": "Blended Scotch Whisky",
                 "volume_ml": 700  
             },
             {
                 "name": "Glenfiddich 12 Year Old",
                 "price": 2500.0,
-                "availabilty": True,
+                "availability": True,
+                "quantity": 40,
                 "description": "Single Malt Scotch Whisky",
                 "volume_ml": 750
             }
